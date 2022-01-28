@@ -1,0 +1,52 @@
+{{ partial "header.html" . }}
+
+<main class="main" role="main">
+
+    <header class="wrap">
+        <h1>{{ .Title }}</h1>
+        <div class="intro text">
+            {{ .Content }}
+        </div>
+        <hr />
+    </header>
+
+    <div class="text wrap">
+
+        <div class="gallery" data-js="photoswipe-gallery" itemscope itemtype="http://schema.org/ImageGallery" data-pswp-uid="1">
+
+            {{ $images := .Resources.ByType "image" }}
+            {{ $imageCount := len $images }}
+
+            {{ range $index, $image := $images }}
+
+                {{ $thumb := $image.Fill "800x800 smart" }}
+                {{ $mod := mod $imageCount $.Params.columns }}
+                {{ $mobileMod := mod $imageCount $.Params.mobileColumns }}
+
+                {{ $columns := $mod }}
+                {{ $mobileColumns := $mod }}
+
+                {{ if gt ( add $index 1) $mod }}
+                    {{ $columns = $.Params.columns }}
+                {{ end }}
+
+                {{ if gt ( add $index 1) $mobileMod }}
+                   {{ $mobileColumns = $.Params.mobileColumns }}
+                {{ end }}
+
+                <figure class="klg-cols-{{ $columns }} klg-mobilecols-{{ $mobileColumns }}" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                    <a href="{{ $image.RelPermalink }}" itemprop="contentUrl" data-size="{{ .Width }}x{{ .Height }}">
+                        <img src="{{ $thumb.RelPermalink }}" itemprop="thumbnail" alt="Image description" />
+                    </a>
+                    <figcaption itemprop="caption description"></figcaption>
+                </figure>
+
+            {{ end }}
+
+        </div>
+
+    </div>
+
+</main>
+
+{{ partial "footer.html" . }}

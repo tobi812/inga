@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
+
+    {{ $mainStyle := resources.Get "css/main.css" | resources.Minify }}
+    {{ $galleryStyle := resources.Get "scss/gallery.scss" | resources.ToCSS | resources.Minify }}
+    {{ $photoswipeStyle := resources.Get "css/photoswipe/photoswipe.min.css"}}
+    {{ $defaultSkinStyle := resources.Get "css/photoswipe/default-skin.min.css"}}
+
+    <link rel="stylesheet" href="{{ $mainStyle.Permalink }}" type="text/css" media="all" />
+    <link rel="stylesheet" href="{{ $galleryStyle.Permalink }}" type="text/css" media="all">
+    <link rel="stylesheet" href="{{ $photoswipeStyle.Permalink }}" type="text/css" media="all">
+    <link rel="stylesheet" href="{{ $defaultSkinStyle.Permalink }}" type="text/css" media="all">
+
+    <meta name="description" content="">
+    <link rel="icon" href="archetypes/inga-icon.png" type="image/png">
+
+    {{ with .OutputFormats.Get "rss" -}}
+    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+    {{ end -}}
+
+</head>
+
+<body>
+
+<header class="header wrap wide" role="banner">
+
+    <div class="grid">
+
+        <div class="branding column">
+            <a href="/" rel="home">{{ .Site.Title }}</a>
+        </div>
+
+        <nav class="navigation column" role="navigation">
+            <ul class="menu">
+                {{ $currentPage := . }}
+                {{ range .Site.Menus.main }}
+                {{ $active := or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}
+                {{ $active = or $active (eq .Name $currentPage.Title) }}
+                    <li class="menu-item {{ if $active  }}is-active{{end}}">
+                        <a href="{{ .URL }}">{{ .Name }}</a>
+                    </li>
+                {{ end }}
+            </ul>
+        </nav>
+
+    </div>
+
+</header>
+
+<main class="content">

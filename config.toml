@@ -1,0 +1,57 @@
+baseURL = 'http://www.inga-rosenstock.de/'
+languageCode = 'de-de'
+title = 'Inga Rosenstock'
+theme = 'skeleton'
+
+[menu]
+
+  [[menu.main]]
+    identifier = "biographie"
+    name = "Biographie"
+    url = "/biographie"
+    weight = 10
+
+  [[menu.main]]
+    identifier = "atelier"
+    name = "Atelier"
+    url = "/gallery/atelier"
+    weight = 20
+
+  [[menu.main]]
+    identifier = "malerei"
+    name = "Malerei"
+    url = "/gallery/malerei"
+    weight = 30
+
+  [[menu.main]]
+    identifier = "skulpturen"
+    name = "Skulpturen"
+    url = "/gallery/skulpturen"
+    weight = 40
+
+  [[menu.main]]
+    identifier = "zeichnungen"
+    name = "Zeichnungen"
+    url = "/gallery/zeichnungen"
+    weight = 50
+
+
+
+  [[menu.footer]]
+    identifier = "kontakt"
+    name = "Kontakt"
+    url = "/kontakt"
+    weight = 10
+
+  [[menu.footer]]
+    identifier = "datenschutz"
+    name = "Datenschutz"
+    url = "/datenschutz"
+    weight = 20
+
+  [[menu.footer]]
+    identifier = "impressum"
+    name = "Impressum"
+    url = "/impressum"
+    weight = 30
+

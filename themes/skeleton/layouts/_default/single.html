@@ -1,0 +1,11 @@
+{{ partial "header.html" . }}
+<main class="main" role="main">
+    <h1>{{ .Title }}</h1>
+
+    <div class="text wrap {{ if $.Params.narrowText }}narrow{{ end }}">
+        {{ .Content }}
+    </div>
+
+</main>
+
+{{ partial "footer.html" . }}

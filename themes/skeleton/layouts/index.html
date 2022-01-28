@@ -1,0 +1,48 @@
+{{ partial "header.html" . }}
+
+<main class="main" role="main">
+
+    <div class="wrap wide">
+        <ul class="showcase grid gutter-1">
+            <div class="wrap wide">
+
+                <ul class="showcase grid gutter-1">
+
+                    {{ $images := $.Params.images }}
+                    {{ range $index, $image := $images }}
+{{/*                        {{ $imageLink := $image.link }}*/}}
+{{/*                        {{ $imageResource := resources.Get "images/001.jpg" }}*/}}
+{{/*                            {{ $imageResource}}*/}}
+{{/*                        <li class="showcase-item column">*/}}
+{{/*                            <a href="https://inga-rosenstock.de/malerei" class="showcase-link">*/}}
+{{/*                                <img src="{{ $imageResource.RelPermalink }}" alt="Thumbnail for Malerei" class="showcase-image">*/}}
+{{/*                                <div class="showcase-caption">*/}}
+{{/*                                    <h3 class="showcase-title">$image.title</h3>*/}}
+{{/*                                </div>*/}}
+{{/*                            </a>*/}}
+{{/*                        </li>*/}}
+{{/*<div class="my-12">*/}}
+{{/*    {{ $search_image := ""}}*/}}
+{{/*    {{ range $.Site.Pages}}*/}}
+{{/*        {{ with .Resources.byType "image" }}*/}}
+{{/*            {{ $search_image = . }}*/}}
+{{/*        {{ end }}*/}}
+{{/*    {{ end }}*/}}
+{{/*    <img src="{{ $search_image.RelPermalink }}" alt="" class="w-96">*/}}
+{{/*</div>*/}}
+
+                    {{ end }}
+
+                </ul>
+            </div>
+
+        </ul>
+    </div>
+
+    <section class="projects-section">
+    </section>
+
+</main>
+
+
+{{ partial "footer.html" . }}
