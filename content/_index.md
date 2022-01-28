@@ -1,15 +1,19 @@
 ---
 title: "Home"
-images:
-    - link: /gallery/malerei/images/006.jpg
+banners:
+    - link: /gallery/malerei/
+      imageRef: images/006.jpg
       title: Malerei
-    - link: /gallery/atelier/images/001.jpg
+    - link: /gallery/atelier/
+      imageRef: images/006.jpg
       title: Atelier
-
+    - link: /gallery/zeichnungen/
+      imageRef: images/001.jpg
+      title: Zeichnungen
+    - link: /gallery/skulpturen/
+      imageRef: images/001.jpg
+      title: Skulpturen
+    - link: /biographie/
+      imageRef: images/001.jpg
+      title: Biographie
 ---
-
-# Hi there
-
-Welcome to your new Hugo site.
-
-Now go build something great.
