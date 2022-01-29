@@ -1,4 +1,4 @@
-baseURL = 'http://www.inga-rosenstock.de/'
+baseURL = 'https://www.inga-rosenstock.de/'
 # baseURL = 'https://tobi812.github.io/inga/'
 languageCode = 'de-de'
 title = 'Inga Rosenstock'
