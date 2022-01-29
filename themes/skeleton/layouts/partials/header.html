@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="{{ $photoswipeStyle.Permalink }}" type="text/css" media="all">
     <link rel="stylesheet" href="{{ $defaultSkinStyle.Permalink }}" type="text/css" media="all">
 
-    <meta name="description" content="">
+    <meta name="description" content="{{ if .Params.metaDescription }}{{ .Params.metaDescription }}{{ end }}">
     <link rel="icon" href="archetypes/inga-icon.png" type="image/png">
 
     {{ with .OutputFormats.Get "rss" -}}

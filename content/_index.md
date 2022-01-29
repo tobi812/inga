@@ -16,4 +16,5 @@ banners:
     - link: /biographie/
       imageRef: images/001.jpg
       title: Biographie
+metaDescription: Zeichnungen, Skulpturen und Malerei von der Künstlerin Inga Rosenstock. Sowie Einblicke in ihr Atelier in Bielefeld Theesen.
 ---
